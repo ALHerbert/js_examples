@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint, render_template
+from flask import Flask, Blueprint, render_template, request
 
 main = Blueprint('main', __name__)
 
@@ -10,6 +10,20 @@ def nodes():
 @main.route('/template')
 def template():
     return render_template('template.html')
+
+@main.route('/add')
+def add():
+    return render_template('add-question.html')
+
+@main.route('/formadd', methods=['POST'])
+def add_post_form():
+    print(request.form)
+    return 'submitted'
+
+@main.route('/jsonadd', methods=['POST'])
+def add_post_json():
+    print(request.get_json())
+    return 'submitted'
 
 @main.route('/api')
 def index():
