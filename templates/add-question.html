@@ -119,7 +119,7 @@ question_form.addEventListener("submit", function() {
     const form = event.currentTarget;
     const form_data = new FormData(form);
     
-    fetch('/formadd', {method: 'POST', body: form_data});
+    fetch('/api/formadd', {method: 'POST', body: form_data});
 });
 </script>
 

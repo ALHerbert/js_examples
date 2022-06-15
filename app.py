@@ -15,12 +15,12 @@ def template():
 def add():
     return render_template('add-question.html')
 
-@main.route('/formadd', methods=['POST'])
+@main.route('/api/formadd', methods=['POST'])
 def add_post_form():
     print(request.form)
     return 'submitted'
 
-@main.route('/jsonadd', methods=['POST'])
+@main.route('/api/jsonadd', methods=['POST'])
 def add_post_json():
     print(request.get_json())
     return 'submitted'
